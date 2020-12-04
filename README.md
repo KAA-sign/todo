@@ -55,6 +55,8 @@ sudo -u postgres psql
 
 >> CREATE DATABASE todo;
 
+>> alter user postgres with encrypted password '7415963';
+
 ## 3. Django
 
 django-admin startproject todo .
