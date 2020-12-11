@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Список</title>
+    {% block title %}
+
+    {% endblock %}
 
     <link rel="shortcut icon" type="image/png" href="imges/favicon.png"/>
     <link rel="stylesheet" href="/static/css/index.css">
@@ -42,8 +44,13 @@
         <div class="relationship__table-data">
             <div class="table-data__table-header">
                 <div class="table-data_table-header-item-1">{{ list_name }}</div>
-                <div class="header__button-create-bundle">+</div>
+
+                <a class="add_new_list" href="/create/">
+                     <div class="header__button-create-bundle">+</div>
+                </a>
+
             </div>
+
             {% for list in lists %}
                 <div class="table-data__table-row">
                 {% if list.is_done %}
@@ -51,6 +58,7 @@
                 {% else %}
                     <div class="table-row_table_cell-1"> {{ list.name }}</div>
                 {% endif %}
+
                 <div class="buttons">
                     <div class="table-data-two_table-icon">
                         <a href='#'>
@@ -97,8 +105,6 @@
 
 </body>
 
-<script>
-
-</script>
+<script></script>
 
 </html>
