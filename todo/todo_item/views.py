@@ -14,13 +14,12 @@ from todo_item.models import ItemModel
 # }
 #
 #
-# def item_view(request):
-#     context = data_list
-#     return render(request, 'list.html', context)
 
-def main_view(request):
+
+def todo_item_view(request):
     lists = ItemModel.objects.filter(
-        user=request.user
+        user=request.user,
+        # list_id=1
     )
     # new_list = [
     #     ListModel.objects.create(
@@ -35,3 +34,4 @@ def main_view(request):
         'user_name': request.user.username
     }
     return render(request, 'index.html', context)
+
