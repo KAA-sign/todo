@@ -12,6 +12,8 @@ class ItemModel(models.Model):
     is_done = models.BooleanField(default=False)
     expare_date = models.DateTimeField(blank=True)
 
+
+
     class Meta:
         verbose_name = 'Элемент списка дел'
         verbose_name_plural = 'Элемент списка дел'

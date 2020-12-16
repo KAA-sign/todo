@@ -12,14 +12,12 @@ from todo_item.models import ItemModel
 #     'user_name': 'Admin',
 #     'list_name': 'По работе'
 # }
-#
-#
 
 
 def todo_item_view(request):
-    lists = ItemModel.objects.filter(
-        user=request.user,
-        # list_id=1
+    lists = ItemModel.objects.all(
+        # user=request.user,
+        # id=1
     )
     # new_list = [
     #     ListModel.objects.create(
