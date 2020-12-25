@@ -48,12 +48,11 @@
 
                 {% endblock %}
 
-                <a class="add_new_list" href="/create/">
+                <a class="add_new_list" href="{% url 'main:create' %}">
                      <div class="header__button-create-bundle">+</div>
                 </a>
 
             </div>
-
         {% block body %}
 
         {% endblock %}
