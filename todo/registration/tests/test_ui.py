@@ -18,7 +18,7 @@ def test_open_login_page(live_server, new_user):
     Попадает на страницу с title 'Войти' и надписью ВХОД
     Вводит тестовый логин и пароль и переходит на главную
     """
-    browser = webdriver.Chrome('/home/serg/PycharmProjects/todo/chromedriver')
+    browser = webdriver.Chrome('/home/anthony/projects/todo/chromedriver')
     browser.get(live_server.url)
     assert browser.title == 'Войти'
     login = browser.find_element_by_name('login')

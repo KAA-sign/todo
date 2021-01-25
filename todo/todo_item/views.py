@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render, reverse, redirect
 from todo_item.models import ListItem
 from main.models import ListModel
@@ -8,7 +9,6 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from copy import copy
-import json
 
 
 class ItemView(LoginRequiredMixin, generic.ListView):
@@ -116,7 +116,8 @@ def edit_item_view(request, pk):
         )
 
         if form.is_valid():
-            success_url = reverse('item:item', kwargs={'pk': item.list_model_id})
+            success_url = reverse('item:item', kwargs={
+                                  'pk': item.list_model_id})
             form.save()
             return redirect(success_url)
     else:

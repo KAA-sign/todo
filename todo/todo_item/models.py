@@ -15,8 +15,7 @@ class ListItem(models.Model):
     def __str__(self):
         return f'@id={self.id}@name={self.name}@list={self.list_model.name}'
 
-    def save(self, force_insert=False, force_update=False, using=None,
-             update_fields=None):
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         super().save()
 
         items = ListItem.objects.filter(list_model=self.list_model)
